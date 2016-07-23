@@ -1,0 +1,74 @@
+<script id="reserva-template" type="x-tmpl-mustache">
+  <div class="row ">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-7">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="col-md-6 ">
+                <img src="https://tambook-upload.s3.amazonaws.com/resize_cache/1361/68d6a040251c2a89277481e5d3de3ae6/iblock/185/nzaklaea002_001.jpg" class="img-preview" alt="Responsive image">
+              </div>
+              <div class="col-md-6 ">
+                <img src="https://tambook-upload.s3.amazonaws.com/resize_cache/1409/68d6a040251c2a89277481e5d3de3ae6/iblock/68d/nzaklaea002_002.jpg" class="img-preview" alt="Responsive image">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="proprieties-container">
+                <dl class="dl-horizontal">
+                  <dt>Description lists</dt><dd>A description list is perfect for defining terms.</dd>
+                  <dt>Euismod</dt><dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                  <dt>Malesuada porta</dt> <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                  <dt>Felis euismod semper eget lacinia</dt> <dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-5">
+            <div class="wizard-container">
+                <div class="steps-container">
+                  <div id="steps">
+                    <div id="step1">
+                      Configuracion de su plan
+                      <select id="plan" class="form-control">
+                      <option   value='none'>seleccione un plan</option>
+                        {{#curso.plan}}
+                        <option value='{{id}}'>{{nombre}}</option>
+                        {{/curso.plan}}
+                      </select>
+                      <div id="plan-detail">                        
+                      </div>
+                    </div>
+                    <div id="step2" class="hide">
+                      Personal
+                    </div>
+                    <div id="step3" class="hide">
+                      Viajar
+                    </div>
+                  </div>
+                    <div id="step4" class="hide">
+                      Alojamiento
+                    </div>
+
+                </div>
+
+                <div id="state">
+                  <button id="back" type="button" class="btn btn-default btn-state">Atras</button>
+                  <button id="next" type="button" class="btn btn-primary btn-state">Siguiente</button>
+                </div>
+
+                <div class="total-container">
+                    <p>total: <span id="total"></span> </p>
+                    <p><a href = "#">Descargar volante de Pago</a> </p>
+                </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  </script>

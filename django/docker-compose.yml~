@@ -1,0 +1,5 @@
+django:
+  build: .
+  command: 'python manage.py runserver 0.0.0.0:20000'
+  ports:
+    - "20000:20000

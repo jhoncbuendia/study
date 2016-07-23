@@ -1,0 +1,7 @@
+django:
+  build: .
+  command: ' '
+  ports:
+    - "20000:20000"
+  volumes:
+    - ./study_server:/home/django_projects/study_server

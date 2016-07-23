@@ -1,0 +1,23 @@
+<script id="cursos-template" type="x-tmpl-mustache">
+  <div class="row ">
+    <div class="col-md-9 col-md-offset-2">
+    <div class="msg-cont">
+      <h1>Elige un curso  en los lugares más emocionantes de la Tierra</h1>
+
+    </div>
+
+    </div>
+  </div>
+{{#data}}
+  <div class="col-md-4" >
+    <div class="card">
+        <img class="card-img-top" src="./asset/img_card.svg" alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title">{{nombre}}</h4>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+          <a  class="btn btn-primary booking-course" onclick="Curso.App.reservar({{id}})">Reservar</a>
+        </div>
+      </div>
+  </div>
+{{/data}}
+</script>
