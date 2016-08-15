@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+      #header-container{
+        width: 100%;
+        display: block;
+      }
+
+      #logo-study, #logo-paypal{
+        width: 49%;
+        display: inline-block;
+      }
+
+      #logo-paypal-img{
+        width: 120px;
+      }
+
+      #body-container{
+        width: 100%;
+      }
+
+      #body-container #text{
+        width: 90%;
+        margin: 0 auto;
+        border: solid 1px grey;
+        padding: 1em;
+        margin-top: 10px;
+        border-radius: 5px;
+      }
+
+      .line{
+        display: block;
+      }
+
+      .line-sum{
+        display: block;
+
+        margin-bottom: 10px;
+      }
+      .line-footer{
+        display: block;
+        margin-top: 10px;
+      }
+
+      #sumary #labels{
+
+        border: solid 1px grey;
+        margin: 0 auto;
+        display: inline-block;;
+      }
+
+      #values{
+        width: 50%;
+      }
+
+      #labels{
+
+        width: 95%;
+        padding: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header-container">
+      <div id="logo-study">
+          <p>Logo Study</p>
+      </div>
+      <div id="logo-paypal">
+          <img id="logo-paypal-img"  src="http://www.readwriteweb.es/wp-content/uploads/2016/06/PayPal-2.jpg" alt="" />
+      </div>
+    </div>
+    <div id="body-container">
+      <div id="text">
+        <p class="line">
+          Hola jhon,
+        </p>
+        <p class="line">
+          Study Limited te ha enviado una factura por $926.00 NZD.
+        </p>
+        <p class="line">
+          <strong>Resumen de la factura</strong>
+        </p>
+
+        <div id="sumary">
+
+          <div id="labels">
+            <div class="line-sum">
+              <strong>Enviado a:</strong>   Jhon Buendia
+            </div>
+            <div class="line-sum">
+              <strong>Enviado por:</strong> Study Limited
+            </div>
+            <div class="line-sum">
+              <strong>Numero de la factura:</strong> 0000
+            </div>
+            <div class="line-sum">
+              <strong>Fecha de vencimiento:</strong> Jul 20, 2016
+            </div>
+            <div class="line-sum">
+              <strong>Cantidad:</strong>   100 USD
+            </div>
+          </div>
+
+
+        </div>
+        <div id="footer">
+          <div class="line-footer">
+            Please don't reply to this email. It'll just confuse the computer that sent it and you won't get a response.
+          </div>
+          <div class="line-footer">
+            Copyright © 2016 PayPal, Inc. All rights reserved. PayPal is located at 2211 N. First St., San Jose, CA 95131.
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </body>
+</html>

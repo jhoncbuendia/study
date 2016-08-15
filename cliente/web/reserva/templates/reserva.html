@@ -2,55 +2,120 @@
   <div class="row ">
     <div class="col-md-12">
       <div class="row">
-        <div class="col-md-7">
+        <div class="col-md-6">
           <div class="row">
             <div class="col-md-12">
-              <div class="col-md-6 ">
-                <img src="https://tambook-upload.s3.amazonaws.com/resize_cache/1361/68d6a040251c2a89277481e5d3de3ae6/iblock/185/nzaklaea002_001.jpg" class="img-preview" alt="Responsive image">
+              <div class="col-md-12 ">
+                <img src="{{curso.img_url}}" class="img-preview" alt="Responsive image">
               </div>
-              <div class="col-md-6 ">
-                <img src="https://tambook-upload.s3.amazonaws.com/resize_cache/1409/68d6a040251c2a89277481e5d3de3ae6/iblock/68d/nzaklaea002_002.jpg" class="img-preview" alt="Responsive image">
-              </div>
+
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
               <div class="proprieties-container">
-                <dl class="dl-horizontal">
-                  <dt>Description lists</dt><dd>A description list is perfect for defining terms.</dd>
-                  <dt>Euismod</dt><dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-                  <dt>Malesuada porta</dt> <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-                  <dt>Felis euismod semper eget lacinia</dt> <dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
-                </dl>
+                <ul id="curso-detail">
+                  <li><i class="fa fa-calendar-check-o detail-icon" aria-hidden="true"></i> {{curso.numero_horas_semana}} horas por semana</li>
+                  <li><i class="fa fa-university detail-icon" aria-hidden="true"></i>{{curso.escuela}}</li>
+                  <li><i class="fa fa-flag detail-icon" aria-hidden="true"></i> {{curso.pais}}</li>
+                  <li><i class="fa fa-usd detail-icon" aria-hidden="true"></i> Desde {{curso.precio}} COP</li>
+                  <li><i class="fa fa-th-list" aria-hidden="true"></i> Actividades Alrededor</li>
+                  {{#curso.actividades}}
+                  <li><i class="fa fa-angle-right" aria-hidden="true"></i> {{.}}</li>
+                  {{/curso.actividades}}
+                </ul>
               </div>
             </div>
           </div>
 
         </div>
-        <div class="col-md-5">
+        <div class="col-md-6">
             <div class="wizard-container">
                 <div class="steps-container">
                   <div id="steps">
                     <div id="step1">
-                      Configuracion de su plan
+                      <p class="title-plan"><i class="fa fa-map-o detail-icon" aria-hidden="true"></i> Configuracion de su plan</p>
                       <select id="plan" class="form-control">
                       <option   value='none'>seleccione un plan</option>
                         {{#curso.plan}}
                         <option value='{{id}}'>{{nombre}}</option>
                         {{/curso.plan}}
                       </select>
-                      <div id="plan-detail">                        
+                      <div id="plan-detail">
                       </div>
                     </div>
-                    <div id="step2" class="hide">
-                      Personal
+                    <div id="step2" class="hid title">
+                      <i class="fa fa-user detail-icon" aria-hidden="true"></i>Informacion Personal
+                      <form class="form-horizontal" id="personal-form">
+                        <div class="form-group">
+                          <label  class="col-sm-3 control-label personal-label">Nombres</label>
+                          <div class="col-sm-9">
+                            <input name="nombre" id="nombre"  class="form-control" placeholder="Nombres">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label  class="col-sm-3 control-label personal-label">Apellidos</label>
+                          <div class="col-sm-9">
+                            <input name="apellido" id="apellido" class="form-control" placeholder="Apellidos">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label  class="col-sm-3 control-label personal-label">Correo</label>
+                          <div class="col-sm-9">
+                            <input name="correo" id="correo" class="form-control" placeholder="Correo">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label  class="col-sm-3 control-label personal-label">Pasaporte</label>
+                          <div class="col-sm-9">
+                            <input name="pasaporte" id="pasaporte"  class="form-control" placeholder="Pasaporte">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label  class="col-sm-3 control-label personal-label">Whatsapp</label>
+                          <div class="col-sm-9">
+                            <input name="whatsapp"  id="whatsapp" class="form-control" placeholder="Whatsapp">
+                          </div>
+                        </div>
+
+                    </form>
+
                     </div>
-                    <div id="step3" class="hide">
-                      Viajar
+                    <div id="step3" class="hid title">
+                      <i class="fa fa-plane detail-icon" aria-hidden="true"></i> Viajar
+                      <p class="viaje-label"> Que tipo de visa tendras?</i></p>
+                      <form class="form-horizontal" id="viaje-form">
+                        <div class="radio">
+                          <label class="viaje-label">
+                            <input type="radio" name="visa" id="opciones_1" value="residente" checked>
+                            Residente permanente
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label class="viaje-label">
+                            <input type="radio" name="visa" id="opciones_2" value="estudiante">
+                            Estudiante
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label class="viaje-label">
+                            <input type="radio" name="visa" id="opciones_2" value="otra">
+                            Otra
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label class="viaje-label">
+                            <input type="radio" name="visa" id="opciones_2" value="visitante">
+                            Visitante/turista
+                          </label>
+                        </div>
+                    </form>
                     </div>
                   </div>
-                    <div id="step4" class="hide">
-                      Alojamiento
+                    <div id="step4" class="hid title">
+                      <i class="fa fa-building detail-icon" aria-hidden="true"></i>Alojamiento
+                      <div id="alojamiento-container">
+                      </div>
                     </div>
 
                 </div>
@@ -61,9 +126,12 @@
                 </div>
 
                 <div class="total-container">
-                    <p>total: <span id="total"></span> </p>
-                    <p><a href = "#">Descargar volante de Pago</a> </p>
-                </div>
+                    <div class="row">
+
+                      <div class="col-sm-12">
+                        <div class="alert alert-warning hid " id="alert" role="alert">...</div>
+                      </div>
+                    </div>
           </div>
         </div>
 

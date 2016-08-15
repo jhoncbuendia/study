@@ -1,0 +1,21 @@
+{
+  "name": "cliente_",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "requirejs": "~2.2.0",
+    "grunt": "~1.0.1",
+    "grunt-contrib-connect": "~1.0.2",
+    "jquery": "2.1.1",
+    "grunt-contrib-stylus": "~1.2.0",
+    "grunt-contrib-watch": "~1.0.0",
+    "mustache": "~2.2.1"
+  }
+}

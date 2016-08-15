@@ -11,15 +11,15 @@ class EscuelaAdmin(admin.ModelAdmin):
     #filter_horizontal = ()
 
 class CursoAdmin(admin.ModelAdmin):
-    list_display = ('nombre','precio','numero_horas_total', 'numero_horas_semana', 'pais','escuela', 'fecha_creacion',  )
+    list_display = ('nombre','precio','numero_horas_total', 'numero_horas_semana', 'pais','escuela', 'fecha_creacion', )
     list_filter = ( 'pais', 'ciudad',)
     search_fields = ['nombre', 'numero_horas_total', 'numero_horas_semana', 'pais   ', ]
-    filter_horizontal = ('actividades', 'plan')
+    filter_horizontal = ('actividades', 'plan', 'alojamiento')
 
 class AlojamientoAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'costo', 'ubicacion', 'curso' )
-    list_filter = ('curso',)
-    search_fields = ['nombre', 'costo', 'curso',  ]
+    list_display = ('nombre', 'costo', 'ubicacion', )
+    #list_filter = (' ',)
+    search_fields = ['nombre', 'costo',   ]
     #filter_horizontal = ('Actividades',)
 
 class ActividadAdmin(admin.ModelAdmin):
@@ -47,9 +47,9 @@ class AgenteAdmin(admin.ModelAdmin):
     #filter_horizontal = ('Actividades',)
 
 class ReservaAdmin(admin.ModelAdmin):
-    list_display = ('estudiante', 'curso', 'alojamiento', 'agente', 'fecha_creacion',)
-    list_filter = ('fecha_creacion', 'curso', 'agente', )
-    search_fields = ['estudiante', 'curso', 'alojamiento', 'agente',  ]
+    list_display = ('nombre', 'apellido', 'whatsapp', 'plan','fecha_creacion')
+    list_filter = ('nombre', 'apellido', 'whatsapp', 'plan','fecha_creacion')
+    search_fields = ['nombre', 'apellido', 'whatsapp', 'plan',  ]
     #filter_horizontal = ('Actividades',)
 
 class PagoAdmin(admin.ModelAdmin):

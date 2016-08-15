@@ -62,6 +62,7 @@ class Escuela(models.Model):
 class Curso(models.Model):
 
     nombre = models.CharField(max_length=50, blank = True )
+    img_url = models.CharField(max_length=200, blank = True )
     categoria =  models.ForeignKey('Categoria', null = True,  blank = True)
     nivel =  models.ForeignKey('Nivel', null = True,  blank = True)
     pais =  models.ForeignKey('Pais', null = True,  blank = True)
@@ -76,6 +77,7 @@ class Curso(models.Model):
     actividades = models.ManyToManyField("Actividad", blank = True)
     fecha_creacion = models.DateTimeField(auto_now_add=True)
     plan = models.ManyToManyField("Plan", blank = True)
+    alojamiento = models.ManyToManyField("Alojamiento", blank = True)
 
     def __unicode__(self):
         return self.nombre
@@ -96,7 +98,7 @@ class Alojamiento(models.Model):
     resume = models.TextField(max_length=100, blank = True )
     costo = models.CharField(max_length=10, blank = True )
     ubicacion = models.CharField(max_length=20, blank = True )
-    curso =  models.ForeignKey('Curso', null = True,  blank = True)
+
 
     def __unicode__(self):
         return self.nombre
@@ -120,17 +122,25 @@ class Comentario(models.Model):
         return self.titulo
 
 class Reserva(models.Model):
-    estudiante =  models.ForeignKey('Estudiante')
-    curso =  models.ForeignKey('Curso', null = True,  blank = True)
-    alojamiento =  models.ForeignKey('Alojamiento', null = True,  blank = True)
-    agente =  models.ForeignKey('Agente', null = True,  blank = True)
-    tipo_visa = models.CharField(max_length=50, blank = True )
-    seguro = models.CharField(max_length=50, blank = True)
-    traslado_areopuerto = models.CharField(max_length=50, blank = True )
+    #estudiante =  models.ForeignKey('Estudiante')
+    #curso =  models.ForeignKey('Curso', null = True,  blank = True)
+    #alojamiento =  models.ForeignKey('Alojamiento', null = True,  blank = True)
+    #agente =  models.ForeignKey('Agente', null = True,  blank = True)
+    #tipo_visa = models.CharField(max_length=50, blank = True )
+    #seguro = models.CharField(max_length=50, blank = True)
+    #traslado_areopuerto = models.CharField(max_length=50, blank = True )
+    nombre = models.CharField(max_length=50, blank = True )
+    apellido = models.CharField(max_length=50, blank = True )
+    correo = models.CharField(max_length=50, blank = True )
+    pasaporte = models.CharField(max_length=50, blank = True )
     fecha_creacion = models.DateTimeField(auto_now_add=True)
+    whatsapp = models.CharField(max_length=50, blank = True )
+    plan = models.CharField(max_length=50, blank = True )
+    alojamiento = models.CharField(max_length=50, blank = True )
+    visa = models.CharField(max_length=50, blank = True )
 
     def __unicode__(self):
-        return self.estudiante.nombres
+        return self.nombre
 
 class Pago(models.Model):
     reserva =  models.ForeignKey('Reserva', null = True,  blank = True)

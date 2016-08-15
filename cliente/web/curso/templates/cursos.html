@@ -1,21 +1,44 @@
 <script id="cursos-template" type="x-tmpl-mustache">
-  <div class="row ">
-    <div class="col-md-9 col-md-offset-2">
-    <div class="msg-cont">
-      <h1>Elige un curso  en los lugares más emocionantes de la Tierra</h1>
-
-    </div>
-
-    </div>
+  <div class="row features">
+      <div class="col-md-4 feature-container">
+        <p>
+          A tu medida Vive en propiedades diseñadas especialmente para la vida estudiantil
+        </p>
+      </div>
+      <div class="col-md-4 feature-container">
+        <p>
+          Guías detalladas Nuestras galerías de fotos y guías te ayudarán a la hora de realizar tu reserva
+        </p>
+      </div>
+      <div class="col-md-4 feature-container">
+        <p>
+          Reservas sin estrés Nuestros experimentados asesores harán que no tengas que preocuparte por nada
+        </p>
+      </div>
   </div>
+
+  <div class="msg-cont ">
+      <h2>Elige un curso  en los lugares más emocionantes de la Tierra</h2>
+      <h4>Los cursos preferidos por nuestros estudiantes</h4>
+  </div>
+
+
+
 {{#data}}
   <div class="col-md-4" >
     <div class="card">
-        <img class="card-img-top" src="./asset/img_card.svg" alt="Card image cap">
+        <img class="card-img-top img-card" src="{{img_url}}" alt="Card image cap">
         <div class="card-block">
-          <h4 class="card-title">{{nombre}}</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-          <a  class="btn btn-primary booking-course" onclick="Curso.App.reservar({{id}})">Reservar</a>
+          <h4 class="card-title curso-title">{{nombre}}</h4>
+          <p class="card-text">
+            <ul id="curso-detail">
+              <li><i class="fa fa-calendar-check-o detail-icon" aria-hidden="true"></i> {{numero_horas_semana}} horas por semana</li>
+              <li><i class="fa fa-university detail-icon" aria-hidden="true"></i>{{escuela}}</li>
+              <li><i class="fa fa-flag detail-icon" aria-hidden="true"></i> {{pais}}</li>
+              <li><i class="fa fa-usd detail-icon" aria-hidden="true"></i> Desde {{precio}} COP</li>
+            </ul>
+          </p>
+          <a  class="btn btn-primary booking-course act-btn" data-id="{{id}}"> Reservar</a>
         </div>
       </div>
   </div>

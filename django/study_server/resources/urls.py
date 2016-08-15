@@ -18,8 +18,5 @@ import views
 #from services import urls as services_url (?P<product>\w+)/
 urlpatterns = [
     url(r'^index/$', views.IndexList.as_view()),
-    url(r'^cursos/$', views.CursoList.as_view()),
-    url(r'^cursos/(?P<id>\w+)/$', views.CursoDetail.as_view()),
-    url(r'^cursos/categoria/(?P<categoria>\w+)/nivel/(?P<nivel>\w+)/pais/(?P<pais>\w+)/precio_max/(?P<precio_max>\w+)$', views.CursoFilter.as_view()),
-    #url(r'^services/', include(services_url)),
+    url(r'^mail/$', views.Mail.as_view()),      
 ]

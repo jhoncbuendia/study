@@ -16,12 +16,13 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from api_gateway import urls as api_gateway_urls
+from resources import urls as resources_urls
 from cursos import urls as cursos_urls
 from reservas import urls as reservas_urls
 #from services import urls as services_url
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^api2/', include(api_gateway_urls)),
+    url(r'^dev/api/', include(resources_urls)),
     url(r'^dev/api/cursos/', include(cursos_urls)),
     url(r'^dev/api/reservas/', include(reservas_urls)),
     #url(r'^services/', include(services_url)),

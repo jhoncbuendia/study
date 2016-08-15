@@ -22,5 +22,3 @@ class CursoList(viewsets.ViewSet):
 
         serializer = CursoListSerializer(queryset, many = True)
         return Response(serializer.data)
-
-    

@@ -24,9 +24,30 @@ input
   margin-bottom: 20px
 
 .src-btn
-  background-color: #ff5a5f
-  border-color: #ff5a5f
+  background-color: #fcce01
+  border-color: #fcce01
   border-radius: 0px !important
+  font-weight: bold
+  color: #4c4c4c
+  width: 120px
+
+.src-btn:hover
+    background-color: #4c4c4c !important
+    border-color: #4c4c4c
+    color:white
+
+.act-btn
+  background-color: #fcce01
+  border-color: #fcce01
+  border-radius: 0px !important
+  font-weight: bold
+  color: #4c4c4c
+  width: 100%
+
+.act-btn:hover
+    background-color: #4c4c4c !important
+    border-color: #4c4c4c
+    color:white
 
 .bg-search
   padding: 10px 15px;
@@ -49,6 +70,9 @@ input
   font-weight: bold
   font-size: 22px
   margin-left: 15px
+
+#logo-img
+  width: 80px
 
 #msg
     position: absolute
@@ -75,9 +99,39 @@ input
 
   color: #808080;
 
+.features
+  border-top: 1px solid rgba(85, 85, 85, 0.23);
+  border-bottom: 1px solid rgba(85, 85, 85, 0.23);
+  margin-bottom: 1em
+  background: white
+
+
+.feature-container
+  padding-top: 2em
+  padding-bottom: 2em
+  border-left: 1px solid rgba(85, 85, 85, 0.23)
+
+
+
+  p
+    width: 90%
+    margin: 0 auto
+    text-align: center
+    color: #4c4c4c
+    font-weight: bolder
+    font-size: 17px
+
+.feature-container:first-child
+  border-right: none
+
+
 .msg-cont
-  margin-top: 3em
-  margin-bottom: 3em
+  margin-top: 1em
+  margin-bottom: 2em
+  background-color: #38b2a6;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  color: white;
 
   h2
     text-align: center
@@ -145,7 +199,7 @@ input
 
 .total-container
   margin-top: 10px
-  background-color: #E5F5F8;
+
   padding: 10px 15px;
 
   p
@@ -167,8 +221,15 @@ input
   display: inline-block;
   margin: 0 auto;
 
-.hide
+.hid
   display: none;
+
+.title
+  font-weight: bold;
+
+.title-plan
+  font-weight: bold;
+  margin-bottom: 10px
 
 #plan-detail
   background-color: white
@@ -183,10 +244,70 @@ input
     li
       margin-bottom: 5px
 
+.img-card
+  width: 318px !important
+
+.personal-label, .viaje-label
+  margin-top: 10px
+  font-size: 15px
+  margin-bottom: -27px;
+  font-weight: bold;
+
+#personal-form, #viaje-form
+  margin-top: 1em;
+
+#footer
+  background: #1a1a1a
+
+.footer-container
+  width: 90%
+  margin: 0 auto
+  background: #222222
+
+  ul
+    color: white
+    margin-top: 10px
+    background: url(http://www.cworld.co/images/footer-map-dark.png) no-repeat center bottom;
+    list-style: none
+
+.footer-title
+  font-size: 21px;
+  margin-bottom: 6px
+
+.footer-item
+  margin-bottom: 5px
+
+.curso-title
+    font-weight: bold;
+    color: #337ab7;
+    font-size: 26px
+
+#intereactive-container
+  margin-top: 10px
+
+#curso-detail
+  list-style: none
+  margin-left: -37px;
+  color: #337ab7;
+  font-weight: bolder;
+
+  li
+    margin-bottom: 14px
+    font-size: 18px
+
+.detail-icon
+  margin-right: 7px
+
+.testimonio-copy
+    margin-top: 18px;
+    /* color: #337ab7; */
+    font-size: 16px;
+    line-height: 1.1;
+    font-weight: 700;
 
 @media (min-width: 768px){
           .modal-dialog {
-              width: 90%;
+              width: 70%;
               margin: 30px auto;
           }
       }

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Study Platform</title>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/index/css/index.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+</head>
+<body ng-app="app" ng-controller="indexCreated">
+    <div class="video-container">
+        <div id="top-bar"><div id="logo">Study Platform</div></div>
+        <div id="msg">UN LUGAR DONDE QUIERES ESTUDIAR {{current_course.nombre}}</div>
+        <div id="search-bar">
+            <div class="col-md-9 col-md-offset-2" >
+                <form class="form-inline">
+                    <div class="form-group">
+
+                        <input class="form-control" id="category" placeholder="Categoria">
+                    </div>
+                    <div class="form-group">
+
+                        <input class="form-control" id="level" placeholder="Nivel">
+                    </div>
+                    <div class="form-group">
+
+                        <input class="form-control" id="country" placeholder="Pais">
+                    </div>
+                    <div class="form-group">
+
+                        <input class="form-control" id="max_price" placeholder="Precio Maximo">
+                    </div>
+                    <button type="submit" class="btn btn-primary src-btn" ng-click="searchCourses()" >Buscar</button>
+                </form>
+
+            </div>
+
+        </div>
+
+        <video class="video-background" autoplay="" loop=""   src="./asset/Traffic-blurred2.mp4" poster="http://thumb.multicastmedia.com/thumbs/aid/w/h/t1351705158/1571585.jpg"></video>
+
+
+    </div>
+
+
+
+    <div id="intereactive-container">
+        <div class="msg-cont ">
+            <h2>Te presentamos los cursos mas populares</h2>
+            <h4>Los cursos preferidos por nuestros estudiantes</h4>
+        </div>
+
+      <div class="row">
+        <div class="col-md-4" ng-repeat="p in courses" >
+          <div class="card">
+              <img class="card-img-top" src="./asset/img_card.svg" alt="Card image cap">
+              <div class="card-block">
+                <h4 class="card-title">{{p.nombre}}</h4>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
+                <a  class="btn btn-primary booking-course"ng-click="reserve($index)" >Reservar</a>
+              </div>
+            </div>
+        </div>
+      </div>
+
+        <div class="msg-cont">
+            <h2>Te presentamos los destinos mas populares</h2>
+            <h4>Descubre cientos de lugares recomendados en cada destino</h4>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="./asset/img_card.svg" alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Ver Cursos</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="./asset/img_card.svg" alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Ver Cursos</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="./asset/img_card.svg" alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Ver Cursos</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="msg-cont">
+            <h2>Nuestra comunidad</h2>
+            <h4>Casos de exito de nuestros estudiantes</h4>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="./asset/img_card.svg" alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="./asset/img_card.svg" alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="./asset/img_card.svg" alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title">Siga los pasos para completar su reserva del <p class="inline" id="curse_title"></p>{{current_course.nombre}}</h3>
+                </div>
+                <div class="modal-body" id="reserva-container">
+                  <div class="row ">
+                    <div class="col-md-12">
+                      <div class="row">
+                        <div class="col-md-7">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="col-md-6 ">
+                                <img src="https://tambook-upload.s3.amazonaws.com/resize_cache/1361/68d6a040251c2a89277481e5d3de3ae6/iblock/185/nzaklaea002_001.jpg" class="img-preview" alt="Responsive image">
+                              </div>
+                              <div class="col-md-6 ">
+                                <img src="https://tambook-upload.s3.amazonaws.com/resize_cache/1409/68d6a040251c2a89277481e5d3de3ae6/iblock/68d/nzaklaea002_002.jpg" class="img-preview" alt="Responsive image">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="proprieties-container">
+                                <dl class="dl-horizontal">
+                                  <dt>Description lists</dt><dd>A description list is perfect for defining terms.</dd>
+                                  <dt>Euismod</dt><dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                  <dt>Malesuada porta</dt> <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                                  <dt>Felis euismod semper eget lacinia</dt> <dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+                                </dl>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                        <div class="col-md-5">
+                            <div class="wizard-container">
+                                <div class="steps-container">
+                                  <div id="steps">
+                                    <div id="step1">
+                                      Configuracion de su plan {{current_course.plan[0].nombre}}
+                                      <select id="plan"  ng-model="chosenplan" ng-init="chosenplan"  data-ng-options="v.nombre for v in current_course.plan" ng-change="chosePlan()" class="form-control" >
+
+                                      </select>
+                                      <div id="plan-detail">
+                                      </div>
+                                    </div>
+                                    <div id="step2" class="hide">
+                                      Personal
+                                    </div>
+                                    <div id="step3" class="hide">
+                                      Viajar
+                                    </div>
+                                  </div>
+                                    <div id="step4" class="hide">
+                                      Alojamiento
+                                    </div>
+
+                                </div>
+
+                                <div id="state">
+                                  <button id="back" type="button" class="btn btn-default btn-state" ng-click="backState()">Atras</button>
+                                  <button id="next" type="button" class="btn btn-primary btn-state" ng-click="nextState()">Siguiente</button>
+                                </div>
+
+                                <div class="total-container">
+                                    <p>total: <span id="total">{{total}}</span> </p>
+                                </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+
+
+
+
+
+
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="./asset/vendors/jquery-ui.js"></script>
+
+
+    <script src="./angular/angular.js"></script>
+    <script src="./index/js/aplication.js"></script>
+    <script src="./angular/services.js"></script>
+    <script src="./index/js/model.js"></script>
+    <script src="./curso/js/model_.js"></script>
+    <script src="./index/js/factory.js"></script>
+    <script src="./index/js/controller.js"></script>
+
+
+</body>
+</html>
