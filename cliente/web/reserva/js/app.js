@@ -7,8 +7,11 @@ Reserva.App = (function(){
   var _current_step = 1;
   var _reserva_info = {};
   function init(curso){
+
+
     $("#curse_title").html(curso['nombre']);
     _curso = curso;
+    _reserva_info['curso_id'] = curso['id'];
     console.log(curso);
     $.get('/reserva/templates/reserva.html', function(templates) {
       var template = $(templates).filter('#reserva-template').html();
@@ -34,6 +37,7 @@ Reserva.App = (function(){
   }
 
   function bindEvents(){
+
 
     $("#plan").on("change", function(){
       var plan = searchPlan($("#plan").val());
@@ -160,6 +164,8 @@ Reserva.App = (function(){
         _reserva_info['alojamiento'] = $("input[name=alojamiento]:checked").val();
         console.log(_reserva_info);
 
+        $("#alert").css({'display': 'block'});
+        $("#alert").html("<img src='../../asset/loading.gif' style='width: 100px; margin: 0 auto;  display: block;' /> ");
 
         $.post( Global.server_url + 'reservas/', {"data" : JSON.stringify( _reserva_info)})
           .done(function( data ) {

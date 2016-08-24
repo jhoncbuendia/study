@@ -60,9 +60,9 @@ class Escuela(models.Model):
         return self.nombre
 
 class Curso(models.Model):
-
     nombre = models.CharField(max_length=50, blank = True )
     img_url = models.CharField(max_length=200, blank = True )
+    documentacion_url = models.CharField(max_length=200, blank = True )
     categoria =  models.ForeignKey('Categoria', null = True,  blank = True)
     nivel =  models.ForeignKey('Nivel', null = True,  blank = True)
     pais =  models.ForeignKey('Pais', null = True,  blank = True)

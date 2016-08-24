@@ -80,15 +80,22 @@ var Index = {
       var country = $("#country").val() == '' ? "null" :  $("#country").val();
       var max_price = $("#max_price").val() == '' ? "0" :  $("#max_price").val();
 
-      Curso.Model.find(category, level, country, max_price).then(function(response){
-        $("#intereactive-container").html(response['rendered']);
-        $('html, body').animate({ scrollTop: $('#intereactive-container').offset().top }, { duration: 2000 });
-        $(".booking-course").on('click',function(){
-          console.log("ok");
-          Curso.App.reservar($(this).data('id'));
-        });
+      Curso.Model.find(category.substring(0, 4), level.substring(0, 4), country.substring(0, 4), max_price).then(function(response){
+        console.log(response['cursos'].length);
+        if(response['cursos'].length == 0){
+          $("#intereactive-container").html(response['rendered']);
+          $("#intereactive-container").append("<h1 style='text-align: center; margin-bottom: 2em;margin-top: 1em; font-size: 47px;'>Lo sentimos no se encontraron cursos</h1>");
+          $('html, body').animate({ scrollTop: $('#intereactive-container').offset().top }, { duration: 2000 });
+        }else{
+          $("#intereactive-container").html(response['rendered']);
+          $('html, body').animate({ scrollTop: $('#intereactive-container').offset().top }, { duration: 2000 });
+          $(".booking-course").on('click',function(){
+            Curso.App.reservar($(this).data('id'));
+          });
 
-        Curso.cursos = Curso.cursos.concat(response['cursos']);
+          Curso.cursos = Curso.cursos.concat(response['cursos']);
+        }
+
         return false;
       }, function(err){ alert("no se encontraron cursos")});
 

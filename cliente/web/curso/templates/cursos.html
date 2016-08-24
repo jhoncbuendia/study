@@ -2,45 +2,53 @@
   <div class="row features">
       <div class="col-md-4 feature-container">
         <p>
+          <i class="fa fa-hand-peace-o feature-icon" aria-hidden="true"></i>
           A tu medida Vive en propiedades diseñadas especialmente para la vida estudiantil
         </p>
+
+
       </div>
       <div class="col-md-4 feature-container">
         <p>
+          <i class="fa fa-newspaper-o feature-icon" aria-hidden="true"></i>
           Guías detalladas Nuestras galerías de fotos y guías te ayudarán a la hora de realizar tu reserva
         </p>
       </div>
       <div class="col-md-4 feature-container">
         <p>
+          <i class="fa fa-calendar-minus-o feature-icon" aria-hidden="true"></i>
           Reservas sin estrés Nuestros experimentados asesores harán que no tengas que preocuparte por nada
         </p>
       </div>
   </div>
 
   <div class="msg-cont ">
+
       <h2>Elige un curso  en los lugares más emocionantes de la Tierra</h2>
-      <h4>Los cursos preferidos por nuestros estudiantes</h4>
+      <h4>Los cursos preferidos por nuestros estudiantes<i class="fa fa-plane choice-icon" aria-hidden="true"></i></h4>
   </div>
 
 
-
-{{#data}}
-  <div class="col-md-4" >
-    <div class="card">
-        <img class="card-img-top img-card" src="{{img_url}}" alt="Card image cap">
-        <div class="card-block">
-          <h4 class="card-title curso-title">{{nombre}}</h4>
-          <p class="card-text">
-            <ul id="curso-detail">
-              <li><i class="fa fa-calendar-check-o detail-icon" aria-hidden="true"></i> {{numero_horas_semana}} horas por semana</li>
-              <li><i class="fa fa-university detail-icon" aria-hidden="true"></i>{{escuela}}</li>
-              <li><i class="fa fa-flag detail-icon" aria-hidden="true"></i> {{pais}}</li>
-              <li><i class="fa fa-usd detail-icon" aria-hidden="true"></i> Desde {{precio}} COP</li>
-            </ul>
-          </p>
-          <a  class="btn btn-primary booking-course act-btn" data-id="{{id}}"> Reservar</a>
+<div class="row">
+  {{#data}}
+    <div class="col-md-4" >
+      <div class="card">
+          <img class="card-img-top img-card" src="{{img_url}}" alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title curso-title">{{nombre}}</h4>
+            <p class="card-text">
+              <ul class="curso-detail">
+                <li><i class="fa fa-calendar-check-o detail-icon" aria-hidden="true"></i> {{numero_horas_semana}} horas por semana</li>
+                <li><i class="fa fa-university detail-icon" aria-hidden="true"></i>{{escuela}}</li>
+                <li><i class="fa fa-flag detail-icon" aria-hidden="true"></i> {{pais}}</li>
+                <div class="divider"></div>
+                <li class="base-price"><i class="fa fa-usd detail-icon" aria-hidden="true"></i> Desde {{precio}} COP</li>
+              </ul>
+            </p>
+            <a  class="btn btn-primary booking-course act-btn" data-id="{{id}}"> Reservar</a>
+          </div>
         </div>
-      </div>
-  </div>
-{{/data}}
+    </div>
+  {{/data}}
+</div>
 </script>

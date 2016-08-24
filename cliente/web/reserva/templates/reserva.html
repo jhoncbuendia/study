@@ -14,14 +14,14 @@
           <div class="row">
             <div class="col-md-12">
               <div class="proprieties-container">
-                <ul id="curso-detail">
+                <ul class="curso-detail">
                   <li><i class="fa fa-calendar-check-o detail-icon" aria-hidden="true"></i> {{curso.numero_horas_semana}} horas por semana</li>
                   <li><i class="fa fa-university detail-icon" aria-hidden="true"></i>{{curso.escuela}}</li>
                   <li><i class="fa fa-flag detail-icon" aria-hidden="true"></i> {{curso.pais}}</li>
                   <li><i class="fa fa-usd detail-icon" aria-hidden="true"></i> Desde {{curso.precio}} COP</li>
                   <li><i class="fa fa-th-list" aria-hidden="true"></i> Actividades Alrededor</li>
                   {{#curso.actividades}}
-                  <li><i class="fa fa-angle-right" aria-hidden="true"></i> {{.}}</li>
+                  <li class="activity"><i class="fa fa-angle-right" aria-hidden="true"></i> {{.}}</li>
                   {{/curso.actividades}}
                 </ul>
               </div>
@@ -34,7 +34,7 @@
                 <div class="steps-container">
                   <div id="steps">
                     <div id="step1">
-                      <p class="title-plan"><i class="fa fa-map-o detail-icon" aria-hidden="true"></i> Configuracion de su plan</p>
+                      <p class="title-plan"><i class="fa fa-cog  detail-icon" aria-hidden="true"></i> Configuracion de su plan</p>
                       <select id="plan" class="form-control">
                       <option   value='none'>seleccione un plan</option>
                         {{#curso.plan}}
@@ -45,7 +45,7 @@
                       </div>
                     </div>
                     <div id="step2" class="hid title">
-                      <i class="fa fa-user detail-icon" aria-hidden="true"></i>Informacion Personal
+                      <p class="title-plan"><i class="fa fa-user detail-icon" aria-hidden="true"></i>Informacion Personal</p>
                       <form class="form-horizontal" id="personal-form">
                         <div class="form-group">
                           <label  class="col-sm-3 control-label personal-label">Nombres</label>
@@ -82,7 +82,7 @@
 
                     </div>
                     <div id="step3" class="hid title">
-                      <i class="fa fa-plane detail-icon" aria-hidden="true"></i> Viajar
+                      <p class="title-plan"><i class="fa fa-plane detail-icon" aria-hidden="true"></i> Viajar</p>
                       <p class="viaje-label"> Que tipo de visa tendras?</i></p>
                       <form class="form-horizontal" id="viaje-form">
                         <div class="radio">
@@ -113,7 +113,7 @@
                     </div>
                   </div>
                     <div id="step4" class="hid title">
-                      <i class="fa fa-building detail-icon" aria-hidden="true"></i>Alojamiento
+                      <p class="title-plan"><i class="fa fa-building detail-icon" aria-hidden="true"></i>Alojamiento</p>
                       <div id="alojamiento-container">
                       </div>
                     </div>
@@ -121,8 +121,8 @@
                 </div>
 
                 <div id="state">
-                  <button id="back" type="button" class="btn btn-default btn-state">Atras</button>
-                  <button id="next" type="button" class="btn btn-primary btn-state">Siguiente</button>
+                  <button id="back" type="button" class="btn btn-warning btn-state">Atras</button>
+                  <button id="next" type="button" class="btn btn-success btn-state">Siguiente</button>
                 </div>
 
                 <div class="total-container">
