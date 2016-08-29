@@ -1,5 +1,7 @@
 #!/bin/bash
-apt-get -y install python-pip
+apt-get update
+apt-get upgrade
+apt-get install python-pip
 pip install Django==1.8.2
 pip install djangorestframework
 pip install markdown
