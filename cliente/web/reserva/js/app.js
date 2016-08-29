@@ -170,9 +170,10 @@ Reserva.App = (function(){
         $.post( Global.server_url + 'reservas/', {"data" : JSON.stringify( _reserva_info)})
           .done(function( data ) {
             console.log(data);
-            $("#alert").text("Se te ha enviado un correo con toda la informacion para adquirir el curso")
-            $("#alert").css({'display': 'block'});
         })
+
+        $("#alert").text("Se te ha enviado un correo con toda la informacion para adquirir el curso")
+        $("#alert").css({'display': 'block'});
 
         $("#back").prop( "disabled", true );
         $("#next").prop( "disabled", true );
