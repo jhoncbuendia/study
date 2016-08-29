@@ -119,5 +119,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 EMAIL_HOST = 'dime200.dizinc.com'
 EMAIL_HOST_USER = 'mail@book2study.com'
 EMAIL_HOST_PASSWORD = '6674889'
-EMAIL_PORT = 465
+EMAIL_PORT = 25
 EMAIL_USE_TLS = True
