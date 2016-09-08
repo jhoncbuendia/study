@@ -422,6 +422,8 @@ class ReservaList(viewsets.ViewSet):
         reserva.plan = data['plan']['nombre']
         reserva.alojamiento = data['alojamiento']
         reserva.visa = data['visa']
+        reserva.seguro = data['seguro']
+        reserva.agencia = data['informacion_personal']['agencia']
         reserva.save()
         sendMail(data['informacion_personal']['correo'], curso.documentacion_url)
         sendMail('jhoncbuendia@gmail.com', curso.documentacion_url)

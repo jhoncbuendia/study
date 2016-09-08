@@ -91,10 +91,12 @@ WSGI_APPLICATION = 'study_server.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': '/Users/macbookpro/Documents/projects/study/django/study_server/db.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
+print os.path.join(BASE_DIR, 'db.sqlite3')
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

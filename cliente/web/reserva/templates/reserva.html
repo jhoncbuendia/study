@@ -5,28 +5,10 @@
         <div class="col-md-6">
           <div class="row">
             <div class="col-md-12">
-              <div class="col-md-12 ">
                 <img src="{{curso.img_url}}" class="img-preview" alt="Responsive image">
-              </div>
+            </div>
+          </div>
 
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="proprieties-container">
-                <ul class="curso-detail">
-                  <li><i class="fa fa-calendar-check-o detail-icon" aria-hidden="true"></i> {{curso.numero_horas_semana}} horas por semana</li>
-                  <li><i class="fa fa-university detail-icon" aria-hidden="true"></i>{{curso.escuela}}</li>
-                  <li><i class="fa fa-flag detail-icon" aria-hidden="true"></i> {{curso.pais}}</li>
-                  <li><i class="fa fa-usd detail-icon" aria-hidden="true"></i> Desde {{curso.precio}} COP</li>
-                  <li><i class="fa fa-th-list" aria-hidden="true"></i> Actividades Alrededor</li>
-                  {{#curso.actividades}}
-                  <li class="activity"><i class="fa fa-angle-right" aria-hidden="true"></i> {{.}}</li>
-                  {{/curso.actividades}}
-                </ul>
-              </div>
-            </div>
-          </div>
 
         </div>
         <div class="col-md-6">
@@ -76,6 +58,13 @@
                           <div class="col-sm-9">
                             <input name="whatsapp"  id="whatsapp" class="form-control" placeholder="Whatsapp">
                           </div>
+
+                        </div>
+                        <div class="form-group">
+                          <label  class="col-sm-3 control-label personal-label">Agencia</label>
+                          <div class="col-sm-9">
+                            <input name="agencia"  id="agencia" class="form-control" placeholder="Codigo Agencia">
+                          </div>
                         </div>
 
                     </form>
@@ -110,6 +99,24 @@
                           </label>
                         </div>
                     </form>
+
+                    <p class="viaje-label"> Necesitas seguro medico?</i></p>
+                    <form class="form-horizontal" id="viaje-form">
+                      <div class="radio">
+                        <label class="viaje-label">
+                          <input type="radio" name="seguro" id="opciones_3" value="si" checked>
+                          Si
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label class="viaje-label">
+                          <input type="radio" name="seguro" id="opciones_3" value="no">
+                          No
+                        </label>
+                      </div>
+
+                  </form>
+
                     </div>
                   </div>
                     <div id="step4" class="hid title">
@@ -135,6 +142,48 @@
           </div>
         </div>
 
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="proprieties-container">
+        <div class="row">
+          <div class="col-md-6">
+            <ul class="curso-detail">
+              <li><h2 id="curso-info-title">Informacion del curso</h2></li>
+              <li><i class="fa fa-calendar-check-o detail-icon" aria-hidden="true"></i> {{curso.numero_horas_semana}} horas por semana</li>
+              <li><i class="fa fa-university detail-icon" aria-hidden="true"></i>{{curso.escuela}}</li>
+              <li><i class="fa fa-flag detail-icon" aria-hidden="true"></i> {{curso.pais}}</li>
+              <li><i class="fa fa-usd detail-icon" aria-hidden="true"></i> Desde {{curso.precio}} COP</li>
+              <li><i class="fa fa-suitcase detail-icon" aria-hidden="true"></i> Puede Trabajar:
+              {{#curso.puede_trabajar}}
+                  Si
+              {{/curso.puede_trabajar}}
+              {{^curso.puede_trabajar}}
+                  No
+              {{/curso.puede_trabajar}}
+              </li>
+              <li><i class="fa fa-th-list" aria-hidden="true"></i> Actividades Alrededor</li>
+              {{#curso.actividades}}
+              <li class="activity"><i class="fa fa-angle-right" aria-hidden="true"></i> {{.}}</li>
+              {{/curso.actividades}}
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul class="curso-detail curso-more-info">
+              <li>
+                Mas Informacion
+                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        </div>
       </div>
     </div>
   </div>

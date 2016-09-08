@@ -159,6 +159,7 @@ Reserva.App = (function(){
         $("#step2").css({'display': 'none'})
         $("#next").text("Finalizar")
         _reserva_info['visa'] = $("input[name=visa]:checked").val();
+        _reserva_info['seguro'] = $("input[name=seguro]:checked").val();
         break;
       case 5:
         _reserva_info['alojamiento'] = $("input[name=alojamiento]:checked").val();
@@ -166,10 +167,13 @@ Reserva.App = (function(){
 
         $("#alert").css({'display': 'block'});
         $("#alert").html("<img src='../../asset/loading.gif' style='width: 100px; margin: 0 auto;  display: block;' /> ");
-
+        setTimeout(function(){
+          $('#myModal').modal('hide');
+        }, 2000);
         $.post( Global.server_url + 'reservas/', {"data" : JSON.stringify( _reserva_info)})
           .done(function( data ) {
             console.log(data);
+
         })
 
         $("#alert").text("Se te ha enviado un correo con toda la informacion para adquirir el curso")

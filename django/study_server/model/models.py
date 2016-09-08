@@ -61,6 +61,7 @@ class Escuela(models.Model):
 
 class Curso(models.Model):
     nombre = models.CharField(max_length=50, blank = True )
+    puede_trabajar = models.BooleanField(default = False)
     img_url = models.CharField(max_length=200, blank = True )
     documentacion_url = models.CharField(max_length=200, blank = True )
     categoria =  models.ForeignKey('Categoria', null = True,  blank = True)
@@ -78,6 +79,7 @@ class Curso(models.Model):
     fecha_creacion = models.DateTimeField(auto_now_add=True)
     plan = models.ManyToManyField("Plan", blank = True)
     alojamiento = models.ManyToManyField("Alojamiento", blank = True)
+
 
     def __unicode__(self):
         return self.nombre
@@ -138,6 +140,8 @@ class Reserva(models.Model):
     plan = models.CharField(max_length=50, blank = True )
     alojamiento = models.CharField(max_length=50, blank = True )
     visa = models.CharField(max_length=50, blank = True )
+    agencia = models.CharField(max_length=50, blank = True )
+    seguro = models.CharField(max_length=10, blank = True )
 
     def __unicode__(self):
         return self.nombre

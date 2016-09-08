@@ -23,4 +23,4 @@ class CursoSerializer(serializers.ModelSerializer):
     pais = serializers.StringRelatedField()
     class Meta:
         model = models.Curso
-        fields = ('id', 'img_url', 'nombre','precio', 'plan', 'numero_horas_total', 'numero_horas_semana',  'pais','escuela', 'actividades', 'fecha_creacion', 'alojamiento')
+        fields = ('id', 'img_url', 'puede_trabajar', 'nombre','precio', 'plan', 'numero_horas_total', 'numero_horas_semana',  'pais','escuela', 'actividades', 'fecha_creacion', 'alojamiento', )

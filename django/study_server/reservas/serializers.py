@@ -3,19 +3,16 @@ from model.models import Reserva
 
 
 class ReservaPostSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Reserva
-        fields = ( 'estudiante', 'tipo_visa', )
+        fields = ( 'nombre', )
 
 class ReservaListSerializer(serializers.ModelSerializer):
-    estudiante = serializers.StringRelatedField( read_only = False )
     class Meta:
         model = Reserva
-        fields = ( 'id', 'estudiante', 'visa', )
+        fields = ( 'nombre', )
 
 class ReservaDetailSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Reserva
-        fields = ( 'id', 'estudiante', 'tipo_visa', )
+        fields = ( 'nombre', )
