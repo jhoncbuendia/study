@@ -16,7 +16,7 @@
                 <div class="steps-container">
                   <div id="steps">
                     <div id="step1">
-                      <p class="title-plan"><i class="fa fa-cog  detail-icon" aria-hidden="true"></i> Configuracion de su plan</p>
+                      <p class="title-plan"><i class="fa fa-cog  detail-icon" aria-hidden="true"></i> <span id='set_plan_title'>Configuracion de su plan</span></p>
                       <select id="plan" class="form-control">
                       <option   value='none'>seleccione un plan</option>
                         {{#curso.plan}}
@@ -105,7 +105,7 @@
                       <div class="radio">
                         <label class="viaje-label">
                           <input type="radio" name="seguro" id="opciones_3" value="si" checked>
-                          Si
+                          Si {{curso.costo_seguro_medico}} COP x Semana
                         </label>
                       </div>
                       <div class="radio">
@@ -187,5 +187,39 @@
       </div>
     </div>
   </div>
+
+  <div class="col-md-12">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="proprieties-container">
+                <h2 id="curso-info-title">Cursos Relacionados</h2>
+
+                <div class="row">
+                  {{#data}}
+                    <div class="col-md-4" >
+                      <div class="card">
+                          <img class="card-img-top img-card" src="{{img_url}}" alt="Card image cap">
+                          <div class="card-block">
+                            <h4 class="card-title curso-title">{{nombre}}</h4>
+                            <p class="card-text">
+                              <ul class="curso-detail">
+                                <li><i class="fa fa-calendar-check-o detail-icon" aria-hidden="true"></i> {{numero_horas_semana}} <span id='hxs'>horas por semana</span></li>
+                                <li><i class="fa fa-university detail-icon" aria-hidden="true"></i>{{escuela}}</li>
+                                <li><i class="fa fa-flag detail-icon" aria-hidden="true"></i> {{pais}}</li>
+                                <div class="divider"></div>
+                                <li class="base-price"><i class="fa fa-usd detail-icon" aria-hidden="true"></i> Desde {{precio}}  <span id='coin'>COP</span></li>
+                              </ul>
+                            </p>
+                            <a  class="btn btn-primary booking-course act-btn" data-id="{{id}}"> <span id='reserve'>Reservar</span></a>
+                          </div>
+                        </div>
+                    </div>
+                  {{/data}}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
 
   </script>

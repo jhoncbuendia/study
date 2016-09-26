@@ -6,7 +6,7 @@ class PlanesSerializer(serializers.ModelSerializer):
     class Meta:
 
         model = Plan
-        fields = ('id', 'nombre', 'precio', 'descuento', 'fecha_creacion', 'resume')
+        fields = ('id', 'nombre', 'precio', 'descuento', 'fecha_creacion', 'resume_es', 'resume_ing')
 
 class AlojamientoSerializer(serializers.ModelSerializer):
 
@@ -27,4 +27,4 @@ class CursoListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Curso
-        fields = ('id', 'img_url', 'nombre', 'puede_trabajar', 'actividades', 'categoria', 'nivel', 'plan', 'precio', 'alojamiento', 'pais', 'escuela',)
+        fields = ('id', 'img_url', 'nombre', 'puede_trabajar', 'costo_seguro_medico', 'actividades', 'categoria', 'nivel', 'plan', 'precio_cop', 'precio_usd', 'alojamiento', 'pais', 'escuela', 'numero_horas_semana',)

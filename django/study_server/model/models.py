@@ -67,7 +67,8 @@ class Curso(models.Model):
     categoria =  models.ForeignKey('Categoria', null = True,  blank = True)
     nivel =  models.ForeignKey('Nivel', null = True,  blank = True)
     pais =  models.ForeignKey('Pais', null = True,  blank = True)
-    precio = models.IntegerField()
+    precio_cop = models.IntegerField()
+    precio_usd = models.IntegerField()
     numero_horas_total = models.CharField(max_length=10, blank = True )
     numero_horas_semana = models.CharField(max_length=10, blank = True )
     ciudad = models.CharField(max_length=20, blank = True)
@@ -79,6 +80,7 @@ class Curso(models.Model):
     fecha_creacion = models.DateTimeField(auto_now_add=True)
     plan = models.ManyToManyField("Plan", blank = True)
     alojamiento = models.ManyToManyField("Alojamiento", blank = True)
+    costo_seguro_medico = models.CharField(max_length=20, blank = True)
 
 
     def __unicode__(self):
@@ -89,8 +91,8 @@ class Plan(models.Model):
     precio = models.IntegerField()
     descuento = models.IntegerField()
     fecha_creacion = models.DateTimeField(auto_now_add=True)
-    resume = models.TextField(max_length=100, blank = True )
-
+    resume_es = models.TextField(max_length=100, blank = True )
+    resume_ing = models.TextField(max_length=100, blank = True )
     def __unicode__(self):
         return self.nombre
 

@@ -11,7 +11,7 @@ class EscuelaAdmin(admin.ModelAdmin):
     #filter_horizontal = ()
 
 class CursoAdmin(admin.ModelAdmin):
-    list_display = ('nombre','precio','numero_horas_total', 'numero_horas_semana', 'puede_trabajar', 'pais','escuela', 'fecha_creacion',  )
+    list_display = ('nombre','precio_cop', 'precio_usd', 'numero_horas_total', 'numero_horas_semana', 'puede_trabajar', 'pais','escuela', 'fecha_creacion',  )
     list_filter = ( 'pais', 'ciudad', 'puede_trabajar')
     search_fields = ['nombre', 'numero_horas_total', 'numero_horas_semana', 'pais   ', ]
     filter_horizontal = ('actividades', 'plan', 'alojamiento')
@@ -77,7 +77,7 @@ class PaisAdmin(admin.ModelAdmin):
     #filter_horizontal = ('Actividades',)
 
 class PlanAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'precio', 'fecha_creacion', 'resume')
+    list_display = ('nombre', 'precio', 'fecha_creacion', 'resume_es', 'resume_ing')
     list_filter = ('fecha_creacion',  )
     search_fields = ['nombre', 'precio' ]
     #filter_horizontal = ('Actividades',)

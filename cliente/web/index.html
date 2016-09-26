@@ -15,22 +15,45 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="https://use.fontawesome.com/616d381d16.js"></script>
     <style media="screen">
-      .row{
-          margin-left: -0px !important;
-      }
+    .row{
+        margin-left: -0px !important;
+    }
+
+    .social-icon{
+            font-size: 50px;
+            margin-right: 15px;
+    }
+
+    #social-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+
+    #blog{
+        margin-left: 15px;
+    }
+    .card-img-top{
+        width: 100%;
+    }
     </style>
 </head>
 <body>
+
     <div class="video-container">
-        <div id="top-bar">
-          <div id="logo">Study Platform<img id="logo-img" src="./asset/img/logo.png">
-            <div id="idioma">
-              <ul>
-                <li><img src="./asset/flags/flags/32/Colombia.png"/></li>
-              </ul>
-               PAIS
-            </div>
+        <div id="idioma">
+            <ul>
+                <li data-pais="col" id="col" class="idioma-btn-selected "><img  src="./asset/flags/flags/32/Colombia.png"/></li>
+                <li data-pais="ns" id="swi" class="idioma-btn hid"><img  src="./asset/flags/flags/32/New_Zealand.png"/></li>
+            </ul>
+            <span id="country">PAIS</span>
+            <a id="blog" href="#">BLOG</a>
         </div>
+        <div id="top-bar">
+            <div id="logo">Book2Study Platform<img id="logo-img" src="./asset/img/logo.png">
+
+            </div>
+
         </div>
         <div id="msg">UN LUGAR DONDE QUIERES ESTUDIAR</div>
         <div id="search-bar">
@@ -49,11 +72,40 @@
                     <div class="form-group">
                         <input class="form-control" id="max_price" placeholder="Precio Maximo">
                     </div>
-                    <button type="submit" class="btn btn-primary src-btn">Buscar</button>
+                    <button type="submit" class="btn btn-primary src-btn"><span id="btn_srch">Buscar</span></button>
                 </form>
             </div>
         </div>
         <video class="video-background" autoplay="" loop=""   src="./asset/Traffic-blurred2.mp4" poster="http://thumb.multicastmedia.com/thumbs/aid/w/h/t1351705158/1571585.jpg"></video>
+    </div>
+
+    <div class="row features">
+        <div class="col-md-4 feature-container">
+          <p>
+            <i class="fa fa-hand-peace-o feature-icon" aria-hidden="true"></i>
+            <span id="text1"> A tu medida Vive en propiedades diseñadas especialmente para la vida estudiantil.</span>
+          </p>
+
+
+        </div>
+        <div class="col-md-4 feature-container">
+          <p>
+            <i class="fa fa-newspaper-o feature-icon" aria-hidden="true"></i>
+            Guías detalladas Nuestras galerías de fotos y guías te ayudarán a la hora de realizar tu reserva
+          </p>
+        </div>
+        <div class="col-md-4 feature-container">
+          <p>
+            <i class="fa fa-calendar-minus-o feature-icon" aria-hidden="true"></i>
+            Reservas sin estrés Nuestros experimentados asesores harán que no tengas que preocuparte por nada
+          </p>
+        </div>
+    </div>
+
+    <div class="msg-cont ">
+
+        <h2>Elige un curso  en los lugares más emocionantes de la Tierra</h2>
+        <h4>Los cursos preferidos por nuestros estudiantes<i class="fa fa-plane choice-icon" aria-hidden="true"></i></h4>
     </div>
 
 
@@ -86,7 +138,7 @@
                     <div class="card-block">
 
                         <p class="card-text testimonio-copy">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </p>
 
                     </div>
@@ -105,51 +157,78 @@
         </div>
     </div>
 
+    <div class="msg-cont">
+        <h2>Certificados</h2>
+        <h4>Contamos con los mejores certificados y garantias de todo el mundo<i class="fa fa-certificate choice-icon" aria-hidden="true"></i></h4>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="http://vietnamteachingjobs.com/wp-content/uploads/wpjobboard/job/1918/company-logo/logo-01.png" alt="Card image cap">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="http://vietnamteachingjobs.com/wp-content/uploads/wpjobboard/job/1918/company-logo/logo-01.png" alt="Card image cap">
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="http://vietnamteachingjobs.com/wp-content/uploads/wpjobboard/job/1918/company-logo/logo-01.png" alt="Card image cap">
+
+            </div>
+        </div>
+    </div>
+
     <div id="footer">
-      <div class="row ">
+        <div class="row ">
 
             <div class="col-md-4">
-              <div class="footer-container">
-                <ul>
-                  <li class="footer-title"><i class="fa fa-university detail-icon" aria-hidden="true"></i>AUCKLAND (CEO)</li>
-                  <li class="footer-item"><i class="fa fa-volume-control-phone detail-icon" aria-hidden="true"></i> +64 (09) 3203536</li>
-                  <li class="footer-item"><i class="fa fa-volume-control-phone detail-icon" aria-hidden="true"></i> +64 20 40451188</li>
-                  <li class="footer-item"><i class="fa  fa-envelope-o detail-icon" aria-hidden="true"></i>info@cworld.co</li>
-                  <li class="footer-item"><i class="fa fa-street-view detail-icon" aria-hidden="true"></i>Level 1, Anzac Ave, Auckland CBD, NZ</li>
-                </ul>
+                <div class="footer-container">
+                    <ul>
+                        <li class="footer-title"><i class="fa fa-university detail-icon" aria-hidden="true"></i>AUCKLAND (CEO)</li>
+                        <li class="footer-item"><i class="fa fa-volume-control-phone detail-icon" aria-hidden="true"></i> +64 (09) 3203536</li>
+                        <li class="footer-item"><i class="fa fa-volume-control-phone detail-icon" aria-hidden="true"></i> +64 20 40451188</li>
+                        <li class="footer-item"><i class="fa  fa-envelope-o detail-icon" aria-hidden="true"></i>info@cworld.co</li>
+                        <li class="footer-item"><i class="fa fa-street-view detail-icon" aria-hidden="true"></i>Level 1, Anzac Ave, Auckland CBD, NZ</li>
+                    </ul>
+                </div>
             </div>
-          </div>
-        <div class="col-md-4">
-          <div class="footer-container">
-            <ul>
-              <li class="footer-title" ><i class="fa fa-university detail-icon" aria-hidden="true"></i>BOGOTA</li>
-              <li class="footer-item"><i class="fa fa-volume-control-phone detail-icon" aria-hidden="true"></i>+57 (1) 530 38 38</li>
-              <li class="footer-item"><i class="fa fa-volume-control-phone detail-icon" aria-hidden="true"></i>+57 (1) 621 0445</li>
-              <li class="footer-item"><i class="fa  fa-envelope-o detail-icon" aria-hidden="true"></i>info@cworld.co</li>
-              <li class="footer-item"><i class="fa fa-street-view detail-icon" aria-hidden="true"></i> Carrera 16 79-31 of 502 Bogotá - Colombia</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="footer-container">
-            <ul>
-              <li class="footer-title" ><i class="fa fa-university detail-icon" aria-hidden="true"></i>OTROS PAISES</li>
-              <li class="footer-item"><i class="fa fa-volume-control-phone detail-icon" aria-hidden="true"></i>PANAMA +507 6528 6434</li>
-              <li class="footer-item"><i class="fa fa-volume-control-phone detail-icon" aria-hidden="true"></i>ECUADOR +11 (0) 202 1313 002</li>
-              <li class="footer-item"><i class="fa fa-volume-control-phone detail-icon" aria-hidden="true"></i>VALLEDUPAR(COL) +57 321 69 90559</li>
-              <li class="footer-item"><i class="fa  fa-envelope-o detail-icon" aria-hidden="true"></i>info@cworld.co</li>
-            </ul>
-          </div>
-        </div>
+            <div class="col-md-4">
+                <div class="footer-container">
+                    <ul>
+                        <li class="footer-title" ><i class="fa fa-university detail-icon" aria-hidden="true"></i>BOGOTA</li>
+                        <li class="footer-item"><i class="fa fa-volume-control-phone detail-icon" aria-hidden="true"></i>+57 (1) 530 38 38</li>
+                        <li class="footer-item"><i class="fa fa-volume-control-phone detail-icon" aria-hidden="true"></i>+57 (1) 621 0445</li>
+                        <li class="footer-item"><i class="fa  fa-envelope-o detail-icon" aria-hidden="true"></i>info@cworld.co</li>
+                        <li class="footer-item"><i class="fa fa-street-view detail-icon" aria-hidden="true"></i> Carrera 16 79-31 of 502 Bogotá - Colombia</li>
+                    </ul>
+                </div>
+            </div>
 
-      </div>
+
+            <div class="col-md-4">
+                <div class="footer-container">
+                    <ul>
+                        <li class="footer-title" ><i class="fa fa-university detail-icon" aria-hidden="true"></i>OTROS PAISES</li>
+                        <li class="footer-item"><i class="fa fa-volume-control-phone detail-icon" aria-hidden="true"></i>PANAMA +507 6528 6434</li>
+                        <li class="footer-item"><i class="fa fa-volume-control-phone detail-icon" aria-hidden="true"></i>ECUADOR +11 (0) 202 1313 002</li>
+                        <li class="footer-item"><i class="fa fa-volume-control-phone detail-icon" aria-hidden="true"></i>VALLEDUPAR(COL) +57 321 69 90559</li>
+                        <li class="footer-item"><i class="fa  fa-envelope-o detail-icon" aria-hidden="true"></i>info@cworld.co</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
     </div>
     <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h3 class="modal-title">Siga los pasos para completar su reserva del <p class="inline" id="curse_title"></p></h3>
+                    <h3 class="modal-title"><span id='reserve_title'>Siga los pasos para completar su reserva del</span> <p class="inline" id="curse_title"></p></h3>
                 </div>
                 <div class="modal-body" id="reserva-container">
 
@@ -164,7 +243,12 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-
+    <div class="" id="social-bar">
+        <a href="#"><i class="fa fa-facebook-official social-icon" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-skype social-icon" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-twitter social-icon" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-instagram social-icon" aria-hidden="true"></i></a>
+    </div>
 
 
 
@@ -174,12 +258,25 @@
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script src="./asset/vendors/jquery-ui.js"></script>
-    <script src="./template/js/template.js" charset="utf-8"></script>
-    <script src="./conf/global.js"></script>
-    <script src="./curso/js/app.js"></script>
-    <script src="./curso/js/model.js"></script>
-    <script src="./reserva/js/app.js"></script>
-    <script src="./index/js/app.js"></script>
+
+
+    <script src="./conf/enviroment.js"></script>
+    <script src="./reserva/js/reserva.js"></script>
+    <script src="./curso/js/curso.js"></script>
+    <script src="./idioma/js/idioma.js"></script>
+    <script src="./index/js/index.js"></script>
+
+
+    <!--Start of Zopim Live Chat Script-->
+    <script type="text/javascript">
+    window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+    d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+    _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+    $.src="//v2.zopim.com/?4E5KiQ9rLKdwh32NrwWTm4AiL43QsTwG";z.t=+new Date;$.
+    type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+    </script>
+    <!--End of Zopim Live Chat Script-->
+
 
 </body>
 </html>

@@ -1,23 +1,27 @@
-var Reserva = {};
-
-Reserva.App = (function(){
+var Reserva = (function(){
   var _step;
   var _curso;
   var _plan;
   var _current_step = 1;
   var _reserva_info = {};
-  function init(curso){
+  _idioma = "";
 
+  function init(curso, pais){
 
     $("#curse_title").html(curso['nombre']);
     _curso = curso;
     _reserva_info['curso_id'] = curso['id'];
-    console.log(curso);
     $.get('/reserva/templates/reserva.html', function(templates) {
       var template = $(templates).filter('#reserva-template').html();
       var rendered = Mustache.render(template, {"curso": curso });
-      $("#reserva-container").html(rendered);
-      $('#myModal').modal('show');
+      $("#reserva-container").html(rendered).promise().done(function(){
+
+        $('#myModal').modal('show');
+        Idioma.renderIdioma(pais);
+    });
+
+
+
       $("#back").prop( "disabled", true );
       $("#next").prop( "disabled", true );
       bindEvents();
@@ -163,30 +167,21 @@ Reserva.App = (function(){
         break;
       case 5:
         _reserva_info['alojamiento'] = $("input[name=alojamiento]:checked").val();
-        console.log(_reserva_info);
-
         $("#alert").css({'display': 'block'});
         $("#alert").html("<img src='../../asset/loading.gif' style='width: 100px; margin: 0 auto;  display: block;' /> ");
         setTimeout(function(){
           $('#myModal').modal('hide');
         }, 2000);
-        $.post( Global.server_url + 'reservas/', {"data" : JSON.stringify( _reserva_info)})
+        $.post( server_url + 'reservas/', {"data" : JSON.stringify( _reserva_info)})
           .done(function( data ) {
-            console.log(data);
-
         })
-
         $("#alert").text("Se te ha enviado un correo con toda la informacion para adquirir el curso")
         $("#alert").css({'display': 'block'});
-
         $("#back").prop( "disabled", true );
         $("#next").prop( "disabled", true );
         break;
-
-
     }
   }
-
 
   function updateTotal(value){
     $("#total").html(value);

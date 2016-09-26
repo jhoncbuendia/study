@@ -9,16 +9,21 @@ class CursoList(viewsets.ViewSet):
     #permission_classes = (IsAuthenticated,)
 
     def list(self, request):
-        query = request.GET.get('q', False)
-
-        if (query):
-            queryset = Curso.objects.filter(Q( categoria__nombre__contains = request.GET.get('categoria', False) ) |
-                                                 Q( nivel__nombre__contains = request.GET.get('nivel', False) ) |
-                                                 Q( pais__nombre__contains = request.GET.get('pais', False) ) |
-                                                 Q( precio__lte = request.GET.get('precio', False) ))
-
+        popular = request.GET.get('popular', False)
+        if(popular):
+            queryset = Curso.objects.all().order_by('-id')[:6]
+            serializer = CursoListSerializer(queryset, many = True)
+            return Response(serializer.data)
         else:
-            queryset = Curso.objects.all()
+            query = request.GET.get('q', False)
+            if (query):
+                #todo add precio filter
+                queryset = Curso.objects.filter(Q( categoria__nombre__contains = request.GET.get('categoria', False) ) |
+                                                 Q( nivel__nombre__contains = request.GET.get('nivel', False) ) |
+                                                 Q( pais__nombre__contains = request.GET.get('pais', False) ) )
+                                                 #| Q( precio__lte = request.GET.get('precio', False) ))
+            else:
+                queryset = Curso.objects.all()
 
-        serializer = CursoListSerializer(queryset, many = True)
-        return Response(serializer.data)
+            serializer = CursoListSerializer(queryset, many = True)
+            return Response(serializer.data)
