@@ -1,0 +1,229 @@
+<script id="reserva-template" type="x-tmpl-mustache">
+  <div class="row ">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-12">
+                <img src="{{curso.img_url}}" class="img-preview" alt="Responsive image">
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-md-6">
+            <div class="wizard-container">
+                <div class="steps-container">
+                  <div id="steps">
+                    <div id="step1">
+                      <p class="title-plan"><i class="fa fa-cog  detail-icon" aria-hidden="true"></i> <span id='set_plan_title'>Setting up your plan</span></p>
+                      <select id="plan" class="form-control">
+                      <option   value='none'>select a plan</option>
+                        {{#curso.plan}}
+                        <option value='{{id}}'>{{nombre}}</option>
+                        {{/curso.plan}}
+                      </select>
+                      <div id="plan-detail">
+                      </div>
+                    </div>
+                    <div id="step2" class="hid title">
+                      <p class="title-plan"><i class="fa fa-user detail-icon" aria-hidden="true"></i>Personal information</p>
+                      <form class="form-horizontal" id="personal-form">
+                        <div class="form-group">
+                          <label  class="col-sm-3 control-label personal-label">First name</label>
+                          <div class="col-sm-9">
+                            <input name="nombre" id="nombre"  class="form-control" placeholder="First name">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label  class="col-sm-3 control-label personal-label">Last name</label>
+                          <div class="col-sm-9">
+                            <input name="apellido" id="apellido" class="form-control" placeholder="Last name">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label  class="col-sm-3 control-label personal-label">Mail</label>
+                          <div class="col-sm-9">
+                            <input name="correo" id="correo" class="form-control" placeholder="Mail">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label  class="col-sm-3 control-label personal-label">Passport</label>
+                          <div class="col-sm-9">
+                            <input name="pasaporte" id="pasaporte"  class="form-control" placeholder="Passport">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label  class="col-sm-3 control-label personal-label">Whatsapp</label>
+                          <div class="col-sm-9">
+                            <input name="whatsapp"  id="whatsapp" class="form-control" placeholder="Whatsapp">
+                          </div>
+
+                        </div>
+                        <div class="form-group">
+                          <label  class="col-sm-3 control-label personal-label">Agency</label>
+                          <div class="col-sm-9">
+                            <input name="agencia"  id="agencia" class="form-control" placeholder="Agency Code">
+                          </div>
+                        </div>
+
+                    </form>
+
+                    </div>
+                    <div id="step3" class="hid title">
+                      <p class="title-plan"><i class="fa fa-plane detail-icon" aria-hidden="true"></i> Travel</p>
+                      <p class="viaje-label"> What type of visa you will have?</i></p>
+                      <form class="form-horizontal" id="viaje-form">
+                        <div class="radio">
+                          <label class="viaje-label">
+                            <input type="radio" name="visa" id="opciones_1" value="residente" checked>
+                            Permanent resident
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label class="viaje-label">
+                            <input type="radio" name="visa" id="opciones_2" value="estudiante">
+                            Student
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label class="viaje-label">
+                            <input type="radio" name="visa" id="opciones_2" value="otra">
+                            Other
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label class="viaje-label">
+                            <input type="radio" name="visa" id="opciones_2" value="visitante">
+                            Visitor / tourist
+                          </label>
+                        </div>
+                    </form>
+
+                    <p class="viaje-label"> You need health insurance?</i></p>
+                    <form class="form-horizontal" id="viaje-form">
+                      <div class="radio">
+                        <label class="viaje-label">
+                          <input type="radio" name="seguro" id="opciones_3" value="si" checked>
+                          Yes {{curso.costo_seguro_medico}} COP x Week
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label class="viaje-label">
+                          <input type="radio" name="seguro" id="opciones_3" value="no">
+                          No
+                        </label>
+                      </div>
+
+                  </form>
+
+                    </div>
+                  </div>
+                    <div id="step4" class="hid title">
+                      <p class="title-plan"><i class="fa fa-building detail-icon" aria-hidden="true"></i>Accommodation</p>
+                      <div id="alojamiento-container">
+                      </div>
+                    </div>
+
+                </div>
+
+                <div id="state">
+                  <button id="back" type="button" class="btn btn-warning btn-state">Back</button>
+                  <button id="next" type="button" class="btn btn-success btn-state">Next</button>
+                </div>
+
+                <div class="total-container">
+                    <div class="row">
+
+                      <div class="col-sm-12">
+                        <div class="alert alert-warning hid " id="alert" role="alert">...</div>
+                      </div>
+                    </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="proprieties-container">
+        <div class="row">
+          <div class="col-md-6">
+            <ul class="curso-detail">
+              <li><h2 id="curso-info-title">Course Information</h2></li>
+              <li><i class="fa fa-calendar-check-o detail-icon" aria-hidden="true"></i> {{curso.numero_horas_semana}} Hours per week</li>
+              <li><i class="fa fa-university detail-icon" aria-hidden="true"></i>{{curso.escuela}}</li>
+              <li><i class="fa fa-flag detail-icon" aria-hidden="true"></i> {{curso.pais}}</li>
+              <li><i class="fa fa-usd detail-icon" aria-hidden="true"></i> From {{curso.precio}} COP</li>
+              <li><i class="fa fa-suitcase detail-icon" aria-hidden="true"></i> You can work:
+              {{#curso.puede_trabajar}}
+                  Yes
+              {{/curso.puede_trabajar}}
+              {{^curso.puede_trabajar}}
+                  No
+              {{/curso.puede_trabajar}}
+              </li>
+              <li><i class="fa fa-th-list" aria-hidden="true"></i> Activities Around</li>
+              {{#curso.actividades}}
+              <li class="activity"><i class="fa fa-angle-right" aria-hidden="true"></i> {{.}}</li>
+              {{/curso.actividades}}
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul class="curso-detail curso-more-info">
+              <li>
+                Mas Informacion
+                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="proprieties-container">
+                <h2 id="curso-info-title">Related courses</h2>
+
+                <div class="row">
+                  {{#data}}
+                    <div class="col-md-4" >
+                      <div class="card">
+                          <img class="card-img-top img-card" src="{{img_url}}" alt="Card image cap">
+                          <div class="card-block">
+                            <h4 class="card-title curso-title">{{nombre}}</h4>
+                            <p class="card-text">
+                              <ul class="curso-detail">
+                                <li><i class="fa fa-calendar-check-o detail-icon" aria-hidden="true"></i> {{numero_horas_semana}} <span id='hxs'>Hours per week</span></li>
+                                <li><i class="fa fa-university detail-icon" aria-hidden="true"></i>{{escuela}}</li>
+                                <li><i class="fa fa-flag detail-icon" aria-hidden="true"></i> {{pais}}</li>
+                                <div class="divider"></div>
+                                <li class="base-price"><i class="fa fa-usd detail-icon" aria-hidden="true"></i> From {{precio}}  <span id='coin'>COP</span></li>
+                              </ul>
+                            </p>
+                            <a  class="btn btn-primary booking-course act-btn" data-id="{{id}}"> <span id='reserve'>Reserve</span></a>
+                          </div>
+                        </div>
+                    </div>
+                  {{/data}}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $("#reserve_title").html("Follow the steps to complete your booking");
+</script>
+
+  </script>

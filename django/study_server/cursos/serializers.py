@@ -27,4 +27,4 @@ class CursoListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Curso
-        fields = ('id', 'img_url', 'nombre', 'puede_trabajar', 'costo_seguro_medico', 'actividades', 'categoria', 'nivel', 'plan', 'precio_cop', 'precio_usd', 'alojamiento', 'pais', 'escuela', 'numero_horas_semana',)
+        fields = ('id', 'img_url', 'nombre', 'puede_trabajar', 'costo_seguro_medico', 'actividades', 'categoria', 'nivel', 'plan', 'precio_colombia', 'precio_newzealand', 'alojamiento', 'pais', 'escuela', 'numero_horas_semana',)

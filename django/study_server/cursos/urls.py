@@ -17,6 +17,7 @@ from django.conf.urls import include, url
 from cursos.api import views
 #from services import urls as services_url (?P<product>\w+)/
 urlpatterns = [
-    url(r'^$', views.CursoList.as_view({'get': 'list'})),
+    url(r'^test/$', views.CursoList.as_view({'get': 'list'})),
+    url(r'^$', views.CursoView.as_view())
 
 ]

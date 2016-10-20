@@ -1,0 +1,111 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Study Platform</title>
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Bootstrap -->
+        <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <script src="https://use.fontawesome.com/616d381d16.js"></script>
+        <style media="screen">
+        .row{
+            margin-left: -0px !important;
+        }
+
+        .view_course{
+            cursor: pointer;
+        }
+
+        #result{
+            display: block; /* or inline-block */
+     text-overflow: ellipsis;
+     word-wrap: break-word;
+     overflow-y: scroll;
+     resize: none;
+        }
+        </style>
+    </head>
+    <body>
+
+        <div class="row">
+
+            <div class="col-md-6" id="list-container">
+
+            </div>
+            <div class="col-md-6" >
+                <h3>Resultado</h3>
+                <textarea id="result" name="name" rows="25" cols="70"></textarea>
+                <div class="row">
+                    <button type="button" class="btn btn-success" id="save_course">Guardar</button>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="../node_modules/mustache/mustache.min.js"></script>
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript">
+
+            var current_course = 0;
+            var courses = 0;
+
+            function eventHandler(){
+
+            }
+
+            function loadCourses(){
+                $.get("http://localhost:20000/dev/api/cursos/").done(function(data){
+                    $.get('./cursos-list.html', function(templates) {
+                        var template = $(templates).filter('#cursos-list-template').html();
+                        var rendered = Mustache.render(template, {"data": data });
+                        $("#list-container").html(rendered);
+
+                        $(".view_course").click(function(){
+                            console.log($(this).attr('id'));
+
+                            for(var i in data){
+                                console.log(data[i]);
+                                if($(this).attr('id') == data[i]['_id']){
+                                    $("#result").val(JSON.stringify(data[i], null, 4));
+                                    current_course = data[i];
+                                    return;
+                                }
+                            }
+                            return false;
+                        });
+                    });
+                })
+            }
+
+            loadCourses();
+
+
+            $("#save_course").click(function(){
+
+                $.ajax({
+                    url: 'http://localhost:20000/dev/api/cursos/',    //Your api url
+                    type: 'PUT',   //type is any HTTP method
+                    data: $("#result").val(),      //Data as js object
+                    success:function(data){
+                        loadCourses();
+                        if(data['response'] == "400")
+                            alert("verifique la estructura del json");
+                        else
+                            alert("datos guardados exitosamente");
+                    }
+                });
+
+
+            });
+        </script>
+
+
+
+    </body>
+    </html>

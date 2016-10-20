@@ -1,0 +1,27 @@
+<script id="cursos-template" type="x-tmpl-mustache">
+
+
+
+<div class="row">
+  {{#data}}
+    <div class="col-md-4" >
+      <div class="card">
+          <img class="card-img-top img-card" src="{{img_url}}" alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title curso-title">{{nombre}}</h4>
+            <p class="card-text">
+              <ul class="curso-detail">
+                <li><i class="fa fa-calendar-check-o detail-icon" aria-hidden="true"></i> {{numero_horas_semana}} <span id='hxs'>Hours per week</span></li>
+                <li><i class="fa fa-university detail-icon" aria-hidden="true"></i>{{escuela}}</li>
+                <li><i class="fa fa-flag detail-icon" aria-hidden="true"></i> {{pais}}</li>
+                <div class="divider"></div>
+                <li class="base-price"><i class="fa fa-usd detail-icon" aria-hidden="true"></i> From {{precio}}  <span id='coin'>USD</span></li>
+              </ul>
+            </p>
+            <a  class="btn btn-primary booking-course act-btn" data-id="{{id}}"> <span id='reserve'>Reserve</span></a>
+          </div>
+        </div>
+    </div>
+  {{/data}}
+</div>
+</script>

@@ -43,10 +43,11 @@
     <div class="video-container">
         <div id="idioma">
             <ul>
-                <li data-pais="col" id="col" class="idioma-btn-selected "><img  src="./asset/flags/flags/32/Colombia.png"/></li>
-                <li data-pais="ns" id="swi" class="idioma-btn hid"><a href="./?country=ns"><img  src="./asset/flags/flags/32/New_Zealand.png"/></a></li>
+                <li data-pais="ns" id="swi" class="idioma-btn-selected"><img  src="./asset/flags/flags/32/New_Zealand.png"/></li>
+                <li data-pais="col" id="col" class="idioma-btn hid "><a href="././?country=col"><img  src="./asset/flags/flags/32/Colombia.png"/></a></li>
+
             </ul>
-            <span id="country">PAIS</span>
+            <span id="country">COUNTRY</span>
             <a id="blog" href="#">BLOG</a>
         </div>
         <div id="top-bar">
@@ -55,24 +56,24 @@
             </div>
 
         </div>
-        <div id="msg">UN LUGAR DONDE QUIERES ESTUDIAR</div>
+        <div id="msg">A PLACE WHERE YOU WANT TO STUDY</div>
         <div id="search-bar">
             <div class="col-md-9 col-md-offset-2" >
                 <form class="form-inline">
                     <div class="form-group">
 
-                        <input class="form-control" id="category" placeholder="Categoria">
+                        <input class="form-control" id="category" placeholder="Category">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" id="level" placeholder="Nivel">
+                        <input class="form-control" id="level" placeholder="level">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" id="country" placeholder="Pais">
+                        <input class="form-control" id="country" placeholder="Country">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" id="max_price" placeholder="Precio Maximo">
+                        <input class="form-control" id="max_price" placeholder="Maximum price">
                     </div>
-                    <button type="submit" class="btn btn-primary src-btn"><span id="btn_srch">Buscar</span></button>
+                    <button type="submit" class="btn btn-primary src-btn"><span id="btn_srch">SEARCH</span></button>
                 </form>
             </div>
         </div>
@@ -83,7 +84,7 @@
         <div class="col-md-4 feature-container">
           <p>
             <i class="fa fa-hand-peace-o feature-icon" aria-hidden="true"></i>
-            <span id="text1"> A tu medida Vive en propiedades diseñadas especialmente para la vida estudiantil.</span>
+            <span id="text1"> A measure your lives in properties specially designed for student life.</span>
           </p>
 
 
@@ -91,21 +92,21 @@
         <div class="col-md-4 feature-container">
           <p>
             <i class="fa fa-newspaper-o feature-icon" aria-hidden="true"></i>
-            Guías detalladas Nuestras galerías de fotos y guías te ayudarán a la hora de realizar tu reserva
+            Our detailed guides galleries and guides will help you when making your reservation
           </p>
         </div>
         <div class="col-md-4 feature-container">
           <p>
             <i class="fa fa-calendar-minus-o feature-icon" aria-hidden="true"></i>
-            Reservas sin estrés Nuestros experimentados asesores harán que no tengas que preocuparte por nada
+            Reservations stress Our experienced consultants will not have to worry about anything
           </p>
         </div>
     </div>
 
     <div class="msg-cont ">
 
-        <h2>Elige un curso  en los lugares más emocionantes de la Tierra</h2>
-        <h4>Los cursos preferidos por nuestros estudiantes<i class="fa fa-plane choice-icon" aria-hidden="true"></i></h4>
+        <h2>Choose a course in the most exciting places on Earth</h2>
+        <h4>Preferred courses for our students<i class="fa fa-plane choice-icon" aria-hidden="true"></i></h4>
     </div>
 
 
@@ -117,8 +118,8 @@
 
 
         <div class="msg-cont">
-            <h2>Nuestra comunidad</h2>
-            <h4>Casos de exito de nuestros estudiantes<i class="fa fa-child choice-icon" aria-hidden="true"></i></h4>
+            <h2>Our community</h2>
+            <h4>Success stories of our students<i class="fa fa-child choice-icon" aria-hidden="true"></i></h4>
         </div>
 
         <div class="row">
@@ -158,8 +159,8 @@
     </div>
 
     <div class="msg-cont">
-        <h2>Certificados</h2>
-        <h4>Contamos con los mejores certificados y garantias de todo el mundo<i class="fa fa-certificate choice-icon" aria-hidden="true"></i></h4>
+        <h2>Certificates</h2>
+        <h4>We have the best certificates and guarantees worldwide<i class="fa fa-certificate choice-icon" aria-hidden="true"></i></h4>
     </div>
 
     <div class="row">
@@ -212,7 +213,7 @@
             <div class="col-md-4">
                 <div class="footer-container">
                     <ul>
-                        <li class="footer-title" ><i class="fa fa-university detail-icon" aria-hidden="true"></i>OTROS PAISES</li>
+                        <li class="footer-title" ><i class="fa fa-university detail-icon" aria-hidden="true"></i>OTHER COUNTRIES</li>
                         <li class="footer-item"><i class="fa fa-volume-control-phone detail-icon" aria-hidden="true"></i>PANAMA +507 6528 6434</li>
                         <li class="footer-item"><i class="fa fa-volume-control-phone detail-icon" aria-hidden="true"></i>ECUADOR +11 (0) 202 1313 002</li>
                         <li class="footer-item"><i class="fa fa-volume-control-phone detail-icon" aria-hidden="true"></i>VALLEDUPAR(COL) +57 321 69 90559</li>
@@ -249,47 +250,6 @@
         <a href="#"><i class="fa fa-twitter social-icon" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-instagram social-icon" aria-hidden="true"></i></a>
     </div>
-
-    <script type="text/javascript">
-
-    function getSearchParameters() {
-      var prmstr = window.location.search.substr(1);
-      return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
-    }
-
-    function transformToAssocArray( prmstr ) {
-    var params = {};
-    var prmarr = prmstr.split("&");
-    for ( var i = 0; i < prmarr.length; i++) {
-        var tmparr = prmarr[i].split("=");
-        params[tmparr[0]] = tmparr[1];
-    }
-    return params;
-    }
-
-    var params = getSearchParameters();
-
-    var lang = params['country'] == undefined ? "col" : params['country'];
-    switch (lang) {
-        case "ns":
-            localStorage.setItem("lang", "en");
-            localStorage.setItem("country", "newzealand");
-            localStorage.setItem("mnd", "usd");
-            window.location = "./en.html";
-            break;
-        case "col":
-            localStorage.setItem("lang", "es");
-            localStorage.setItem("country", "colombia");
-            localStorage.setItem("mnd", "cop");
-            //window.location = "./es.html";
-            break;
-        default:
-            localStorage.setItem("lang", "es");
-            localStorage.setItem("mnd", "cop");
-            //window.location = "./es.html";
-    }
-
-    </script>
 
 
 

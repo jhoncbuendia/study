@@ -6,18 +6,17 @@ var Reserva = (function(){
   var _reserva_info = {};
   _idioma = "";
 
-  function init(curso, pais){
+  function init(curso, country, lang, mnd){
 
     $("#curse_title").html(curso['nombre']);
     _curso = curso;
     _reserva_info['curso_id'] = curso['id'];
-    $.get('/reserva/templates/reserva.html', function(templates) {
+    $.get('/reserva/templates/reserva_'+lang+'.html', function(templates) {
       var template = $(templates).filter('#reserva-template').html();
       var rendered = Mustache.render(template, {"curso": curso });
       $("#reserva-container").html(rendered).promise().done(function(){
-
         $('#myModal').modal('show');
-        Idioma.renderIdioma(pais);
+
     });
 
 

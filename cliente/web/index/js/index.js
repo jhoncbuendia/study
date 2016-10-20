@@ -1,7 +1,9 @@
 
 
 var Index = (function(){
-
+    var _country = localStorage.getItem("country");
+    var _lang = localStorage.getItem("lang");
+    var _mnd = localStorage.getItem("mnd");
 
     function getQueryParams(qs) {
         qs = qs.split('+').join(' ');
@@ -20,19 +22,13 @@ var Index = (function(){
 
     function init(){
 
-        var query = getQueryParams(document.location.search);
-        pais = query['pais'];
-        if(typeof pais == "undefined") pais = "col";
-        _pais = pais;
 
         render();
         eventHandler();
-        Idioma.init(_pais);
 
     }
 
     function render(){
-
         renderPopularCourses();
     }
 
@@ -42,9 +38,6 @@ var Index = (function(){
             $(".idioma-btn").css({'display': 'block'});
         });
 
-        $(".idioma-btn").click(function(){
-            window.location = window.location.origin + "?pais=" + $(this).attr("data-pais");
-        });
 
         $(".src-btn").on('click', function(){
             renderFilteredCourses();
@@ -55,13 +48,13 @@ var Index = (function(){
 
 
     function renderPopularCourses(){
-
+        console.log(_lang);
+        console.log(_mnd);
             Curso.getPopular().done(function(cursos){
-                cursos = Curso.setLanguaje(cursos, _pais);
-                Curso.renderCursos(cursos, "#popular_courses", function(){
-                    Idioma.renderIdioma(_pais);
+                Curso.renderCursos(cursos, _country, _lang, _mnd,  "#popular_courses", function(){
+
                     $(".booking-course").on('click',function(){
-                        Reserva.init(Curso.getCurso(cursos, $(this).data('id')), _pais);
+                        Reserva.init(Curso.getCurso(cursos, $(this).data('id')), _country, _lang, _mnd);
                     });
                 });
 

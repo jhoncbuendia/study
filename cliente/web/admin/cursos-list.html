@@ -1,0 +1,28 @@
+<script id="cursos-list-template" type="x-tmpl-mustache">
+<h3>Cursos</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                id
+            </th>
+            <th>
+                nombre
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    {{#data}}
+        <tr>
+            <th>
+                <a class='view_course' id='{{_id}}' > {{_id}}</a>
+            </th>
+            <th>
+                {{name}}
+            </th>
+        </tr>
+    </tbody>
+    {{/data}}
+</table>
+
+</script>

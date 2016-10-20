@@ -22,11 +22,14 @@ var Curso = (function(){
       return $.get( server_url + "cursos/?q=1&categoria="+category+"&nivel="+level+"&pais="+country+"&precio="+max_price+"&moneda="+moneda);
   }
 
-  function renderCursos(cursos, container, cb ){
-    $.get('/curso/templates/cursos.html', function(templates) {
+  function renderCursos(cursos, country, lang, mnd,  container, cb ){
+    var c = setLanguaje(country, cursos);
+    $.get('/curso/templates/cursos_' +lang+'.html', function(templates) {
+        console.log(c);
         var template = $(templates).filter('#cursos-template').html();
-        var rendered = Mustache.render(template, {"data": cursos });
+        var rendered = Mustache.render(template, {"data": c });
         $(container).html(rendered);
+        $('#coin').html(country+' '+mnd);
         cb();
     });
   }
@@ -35,32 +38,16 @@ var Curso = (function(){
 
   }
 
-  function setLanguaje(cursos, pais){
-      console.log(cursos);
-      var moneda;
-      var idioma;
+  function setLanguaje(country, cursos){
 
-      switch (pais) {
-          case "col":
-                moneda = "cop";
-                idioma = "es";
-              break;
-          case "ns":
-                moneda = "usd";
-                idioma = "ing";
-                break;
-          default:
-
-      }
-      console.log('precio_' + moneda);
       for(var i in cursos){
-          cursos[i]['precio'] = cursos[i]['precio_' + moneda];
+          cursos[i]['precio'] = cursos[i]['precio_' + country];
            for (var j in cursos[i]['plan']){
-               cursos[i]['plan'][j]['resume'] = cursos[i]['plan'][j]['resume_' + idioma]
+               cursos[i]['plan'][j]['resume'] = cursos[i]['plan'][j]['resume_' + country]
            }
       }
 
-      ajustIdioma(idioma);
+      //ajustIdioma(idioma);
       return cursos;
   }
 
